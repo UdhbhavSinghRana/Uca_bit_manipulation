@@ -17,14 +17,13 @@ int arithmeticToLogical(int x, int shift_val) {
 }
 
 int sign(int x) {
-    return arithmeticToLogical(x, 31);
+    int sign_bit = (x >> 31);
+    return (sign_bit | (!!x));
 }
 
 int main() {
     int num;
     scanf("%d", &num);
-    printBinary(num);
     int res = sign(num);
-    printBinary(sign(num));
-    res == 1 ? printf("%d \n", -1) : printf("%d \n", 1);
+    printf("%d", res);
 }
