@@ -9,13 +9,6 @@ void printBinary(int num) {
     printf("\n");
 }
 
-int arithmeticToLogical(int x, int shift_val) {
-    int res = x >> shift_val;
-    int mask = (1 << (32 - shift_val)) - 1; // Create a mask of lower bits set to 1
-    res = res & mask;
-    return res;
-}
-
 int sign(int x) {
     int sign_bit = (x >> 31);
     return (sign_bit | (!!x));
